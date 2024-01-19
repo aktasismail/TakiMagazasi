@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "SignalRPage";
+}
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+@section Scripts {
+    
+    <div class="cart">
+        <script type="text/javascript">
+            $(document).ready(() => {
+                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7028/SignalRHub").build();
+                $("#connectionstatus").text(connection.state);
+                connection.start().then(() => {
+                    $("#connectionstatus").text(connection.state);
+                    setInterval(() => {
+                        connection.invoke("CategoryCount");
+                    }, 1000);
+                }).catch((err) => { console.log(err) });
+                connection.on("categorycount", (category) => {
+                    $("#count").text(category);
+                });
+            });
+        </script>
+    </div>
+}
+<div class="alert alert-danger">bağlantı dururmu <strong id="connectionstatus"></strong></div>
+<div class="alert alert-danger">Kategori sayısı <strong id="count"></strong></div>

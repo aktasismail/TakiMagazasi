@@ -1,0 +1,36 @@
+﻿@model List<DiscountDto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="ia_admin_list">
+    <div class="ia_admin_list_header">
+        <p class="ia_title">İndirimler</p>
+        <a class="ia_new_button" href="Discount/CreateDiscount/">Yeni Ekle</a>
+    </div>
+    <div>
+        <table class="ia_admin_list_table">
+            <tr>
+                <th>Başlık</th>
+                <th>İndirim oranı</th>
+                <th>Durumu</th>
+                <th>Düzenleme</th>
+                <th>Silme</th>
+                <th>Etkinleştir</th>
+                <th>İptal et</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Amount</td>
+                    <td>@item.Status</td>
+                    <td><a href="/Discount/DeleteDiscount/@item.DiscountId" class="ia_button_remove">Sil</a></td>
+                    <td><a href="/Discount/UpdateDiscount/@item.DiscountId" class="ia_button_success">Güncelle</a></td>
+                    <td><a href="/Discount/ChangeStatusToFalse/@item.DiscountId" class="btn btn-outline-dark">Pasif Yap</a></td>
+                    <td><a href="/Discount/ChangeStatusToTrue/@item.DiscountId" class="ia_button_success">Aktif Yap</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

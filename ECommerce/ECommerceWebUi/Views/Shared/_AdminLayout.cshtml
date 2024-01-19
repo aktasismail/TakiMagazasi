@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AktasShop</title>
+    <link rel="stylesheet" href="~/css/Main.css" />
+</head>
+<body>
+    <section class="ia_admin">
+        <div class="ia_sidebar">
+            <span class="ia_admin_logo"><a asp-controller="Home" asp-action="Index">AktasShop</a></span>
+            <ul>
+                <li><p>Yönetim Paneli</p></li>
+                <li><i class="bi bi-watch"></i><a asp-controller="Product" asp-action="List">Ürünler</a></li>
+                <li><i class="bi bi-tag"></i> <a asp-controller="Category" asp-action="Index">Kategoriler</a></li>
+                <li><i class="bi bi-bag-check"></i><a href="#">Siparişler</a></li>
+                <li><i class="bi bi-person-circle"></i><a href="#">Kullanıcılar</a></li>
+                <li><i class="bi bi-info-circle"></i><a asp-controller="About" asp-action="Index">Hakkımda</a></li>
+                <li><i class="bi bi-telephone"></i><a asp-controller="Contact" asp-action="Index">İletişim</a></li>
+                <li><i class="bi bi-people"></i><a asp-controller="SocialMedia" asp-action="Index">Sosyal medya</a></li>
+                <li><i class="bi bi-cash"></i><a href="#">İndirimler</a></li>
+            </ul>
+            <ul>
+                <li><p>Menü</p></li>
+                <li><a asp-controller="Product" asp-action="Index" >Anasayfa</a></li>
+                <li><a href="#">İletişim</a></li>
+                <li><a href="#">Hakkımda</a></li>
+                <li><a href="#">Arama</a></li>
+            </ul>
+        </div>
+        @RenderBody()
+    </section>
+    <footer>
+        <div class="ia_footer">
+            <ul class="footer-company">
+                <li>AktasShop</li>
+                @await Component.InvokeAsync("FooterAboutVC")
+            </ul>
+            <ul>
+                <li>Sosyal medya</li>
+                @await Component.InvokeAsync("FooterSocialMediaVC")
+            </ul>
+            <ul>
+                <li>Ürünler</li>
+                @await Component.InvokeAsync("FooterCategoryVC")
+            </ul>
+            @await Component.InvokeAsync("FooterContactVC")
+        </div>
+        <div class="ia_copyright">
+            ©2023 <a href="https://ismailaktas.net/">ismailaktas.net</a> tarafından oluşturuldu
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceBusiness.deps.json
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceBusiness.pdb
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.AssemblyInfoInputs.cache
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.AssemblyInfo.cs
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\refint\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.pdb
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ref\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.csproj.AssemblyReference.cache
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceDataAccess.dll
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceEntities.dll
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceDataAccess.pdb
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceEntities.pdb
+C:\Users\ismail\Desktop\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.csproj.CopyComplete
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceBusiness.deps.json
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceBusiness.pdb
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceDataAccess.dll
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceEntities.dll
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceDataAccess.pdb
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceEntities.pdb
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.csproj.AssemblyReference.cache
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.AssemblyInfoInputs.cache
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.AssemblyInfo.cs
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.csproj.CopyComplete
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\refint\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.pdb
+C:\Users\ismail\Desktop\Çalışmalarım\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ref\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceBusiness.deps.json
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceBusiness.pdb
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceDataAccess.dll
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceEntities.dll
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceDataAccess.pdb
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\bin\Debug\net6.0\ECommerceEntities.pdb
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.csproj.AssemblyReference.cache
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.AssemblyInfoInputs.cache
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.AssemblyInfo.cs
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.csproj.CopyComplete
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\refint\ECommerceBusiness.dll
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ECommerceBusiness.pdb
+C:\Users\ismail\Desktop\Yeni klasör\ECommerce\ECommerceBusiness\obj\Debug\net6.0\ref\ECommerceBusiness.dll

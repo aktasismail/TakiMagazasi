@@ -1,0 +1,8 @@
+﻿@model List<CommentDto>
+@foreach (var item in Model)
+{
+    <span class="ia_comment_title">
+        @item.FullName
+    </span>
+    <span>@item.Text</span>
+}

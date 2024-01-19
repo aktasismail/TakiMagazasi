@@ -1,0 +1,18 @@
+﻿@model ContactDto
+@{
+    ViewData["Title"] = "Güncelle";
+}
+<div class="ia_admin_edit">
+    <form method="post">
+        <div class="ia_admin_form">
+            <p class="ia_title">İletişim bilgileri güncelle</p>
+            <input type="hidden" asp-for="ContactId" />
+            <input class="ia_admin_input" asp-for="Title" placeholder="Başlık" />
+            <textarea class="ia_admin_input" asp-for="Description" placeholder="Açıklama"></textarea>
+            <input class="ia_admin_input" asp-for="Mail" placeholder="E posta" />
+            <input class="ia_admin_input" asp-for="Phone" placeholder="Telefon" />
+            <input class="ia_admin_input" asp-for="Location" placeholder="Konum" />
+            <button type="submit" class="ia_button_blue">Güncelle</button>
+        </div>
+    </form>
+</div>

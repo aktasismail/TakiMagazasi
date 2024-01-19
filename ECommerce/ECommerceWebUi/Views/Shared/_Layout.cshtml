@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AktasShop</title>
+    <link rel="stylesheet" href="~/css/Main.css" />
+</head>
+<body>
+    <div class="ia_header">
+        <span class="ia_logo"><a asp-controller="Home" asp-action="Index">AktasShop</a></span>
+        <ul>
+            <li><a asp-controller="Home">Anasayfa</a></li>
+            <li><a asp-controller="Home" asp-action="GetAbout">Hakkımda</a></li>
+            <li><a asp-controller="Home" asp-action="GetContact">İletişim</a></li>
+            <partial name="_LoginPartial" />
+            @* @await Component.InvokeAsync("NavbarVC") *@
+        </ul>
+        <div class="ia_cart_header">
+            <a asp-controller="Cart" asp-action="Index"><i class="bi bi-bag-fill"></i></a>
+            <a asp-controller="Favourite" asp-action="Index"><i class="bi bi-heart-fill"></i></a>
+        </div>
+    </div>
+    @RenderBody()
+    
+<footer>
+        <div class="ia_footer">
+            <ul class="footer-company">
+                <li>AktasShop</li>
+                @await Component.InvokeAsync("FooterAboutVC")
+            </ul>
+            <ul>
+                <li>Sosyal medya</li>
+                @await Component.InvokeAsync("FooterSocialMediaVC")
+            </ul>
+            <ul>
+                <li>Ürünler</li>
+                @await Component.InvokeAsync("FooterCategoryVC")
+            </ul>
+            @await Component.InvokeAsync("FooterContactVC")
+        </div>
+        <div class="ia_copyright">
+            ©2023 <a href="https://ismailaktas.net/">ismailaktas.net</a> tarafından oluşturuldu
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @* <script type="text/javascript">
+
+        $(document).ready(() => {
+
+            var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7028/SignalRHub").build();
+            $("#connstatus").text(connection.state);
+            connection.start().then(() => {
+                $("#connstatus").text(connection.state);
+                setInterval(() => {
+                    connection.invoke("SendNotification");
+                }, 1000);
+            }).catch((err) => { console.log(err) });
+
+
+            connection.on("ReceiveNotificationCountByFalse", (value) => {
+                $("#notificationcount").text(value);
+            });
+
+            connection.on("ReceiveNotificationListByFalse", (value) => {
+                console.log(value);
+                $("#notilist").empty();
+                for (var i = 0; i < value.length; i++) {
+                    $("#notilist").append(`<a href="#">
+                                                    <div class="${value[i].type}"><i class="${value[i].icon}"></i></div>
+                                                    <div class="notif-content">
+                                                    <span class="block">
+                                                    ${value[i].description}
+                                                    </span>
+                                                    <span class="time">${value[i].date}</span>
+                                                    </div>
+                                                    </a>
+                                                    `)
+                };
+            });
+        });
+
+    </script> *@
+</body>
+</html>
