@@ -1,7 +1,0 @@
-﻿@model List<CategoryDto>
-@foreach (var item in Model)
-{
-    <li>
-        <a asp-controller="Product" asp-action="ListByCategory" asp-route-id="@item.CategoryId">@item.CategoryName</a>
-    </li>
-}
