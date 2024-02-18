@@ -1,0 +1,58 @@
+﻿@model List<CartModel>
+@{
+    Layout = "_Layout";
+    decimal cartprice = 0;
+    decimal totalprice = 0;
+    decimal kdv = 0;
+    int? count = null;
+}
+<div class="ia_cart">
+    <div class="ia_cart_items">
+        <table>
+            <tr>
+                <th>Ürün resmi</th>
+                <th>Ürün adı</th>
+                <th>Miktar</th>
+                <th>Fiyat</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                count++;
+                cartprice = Model.Sum(x => x.Price);
+                kdv = cartprice / 100 * 10;
+                totalprice = cartprice + kdv;
+                <tr>
+                    <td><img class="ia_cart_image" src="~/image/@item.ImageUrl" /></td>
+                    <td><a asp-controller="Home" asp-action="ProductDetails" asp-route-id="@item.Id">@item.ProductName</a></td>
+                    <td>@item.Price₺</td>
+                    <td><a class="ia_button_remove" asp-action="DeleteCart" asp-route-id="@item.Id">Sil</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="cart_detail">
+        <div class="cart_total">
+            <span>Sepet toplamı</span>
+            <span>@cartprice₺</span>
+        </div>
+        <div class="cart_total">
+            <span>Kdv tutarı</span>
+            <span>@kdv₺</span>
+        </div>
+        <div class="cart_total">
+            <span><b>Toplam</b></span>
+            <span><b>@totalprice₺</b></span>
+        </div>
+        <hr /><br />
+        <div class="cart_total">
+            <form method="get" asp-action="Checkout" asp-controller="Order">
+
+                <button type="submit" class="ia_button_success">
+                    Sepeti onayla
+                </button>
+            </form>
+        </div>
+
+        
+    </div>
+</div>

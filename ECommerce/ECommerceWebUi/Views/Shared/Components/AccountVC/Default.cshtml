@@ -1,0 +1,19 @@
+﻿@model AppUser
+
+<div class="profile_header">
+    <div class="ia_row">
+        <div class="profile_title"><p>Hoşgeldiniz @Model.FirstName @Model.LastName</p></div>
+        <a asp-controller="User" asp-action="EditProfile" class="ia_button_blue">Profili düzenle</a>
+    </div>
+    <div class="ia_row">
+        <div>
+            <p>Kullanıcı adı :@Model.UserName</p>
+            <p>E posta: @Model.Email</p>
+            <p>Telefon: 05452542554</p>
+        </div>
+        <div>
+            <p>Cumhuriyet mh. lale sk. no:24</p>
+            <p>Ankara-Çankaya</p>
+        </div>
+    </div>
+</div>

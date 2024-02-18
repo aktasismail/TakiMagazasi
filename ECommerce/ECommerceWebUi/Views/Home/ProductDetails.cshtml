@@ -1,0 +1,44 @@
+﻿@model CommentModels
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Ürün Detayı";
+}
+<div class="ia_product_detail">
+    <div class="pdetail_img">
+        <img src="~/image/@Model.productDto.ImageUrl"/>
+    </div>
+    <div class="pdetail">
+        <span class="ia_title">@Model.productDto.ProductName</span>
+        <p class="ia_title_large">@Model.productDto.Price ₺</p>
+        <div class="ia_cart">
+            <form method="post" asp-action="AddToCart" asp-controller="Cart" asp-route-id="@Model.productDto.Id">
+                <button type="submit" class="ia_button_fullsize">Sepete Ekle</button>
+            </form>
+        </div>
+        <p>Ürün detayları</p>
+        @Html.Raw(Model.productDto.Description)
+    </div>
+</div>
+<span class="ia_title_product_detail">Diğer ürünler</span>
+
+@await Component.InvokeAsync("ProdutListVC")
+<div class="ia_product_detail">
+    <div class="ia_column">
+    <form asp-controller="Comment" asp-action="AddCommentT" method="post">
+    <div class="ia_comment">
+        <input hidden name="id" value="@Model.productDto.Id" />
+            <input class="ia_input" asp-for="@Model.commentCreateDto.FullName" placeholder="Adınız" />
+            <textarea class="ia_textarea" asp-for="@Model.commentCreateDto.Text" placeholder="Yorumunuz"></textarea>
+            <button type="submit" class="ia_button_comment"><img height="26px" src="~/image/send.svg" /></button>
+    </div>
+</form>
+    @foreach (var item in Model.Comment)
+    {
+        <div class="list_order">
+            <p>@item.FullName</p>
+            <p>@item.Text</p>
+        </div>
+    }
+</div>
+</div>

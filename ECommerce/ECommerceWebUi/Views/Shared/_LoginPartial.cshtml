@@ -1,0 +1,20 @@
+﻿﻿@using Microsoft.AspNetCore.Identity
+@using ECommerceEntities
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <li><a class="item" asp-controller="User" asp-action="Index">@UserManager.GetUserName(User)</a></li>
+    <li><a class="item"  asp-controller="Account" asp-action="Logout">Çıkış</a></li>
+    @if (User.IsInRole("Admin"))
+    {
+        <li><a class="item" asp-controller="About" asp-action="Index">Admin</a></li>
+    }
+}
+else
+{
+    <li><a class="item"  asp-controller="Account" asp-action="Login">Giriş Yap</a></li>
+    <li><a class="item"  asp-controller="Account" asp-action="Register">Kayıt Ol</a></li>
+}

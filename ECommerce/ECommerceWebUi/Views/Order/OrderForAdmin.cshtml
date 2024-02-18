@@ -1,0 +1,26 @@
+﻿@model List<Order>
+@{
+    ViewData["Title"] = "Siparişler";
+}
+<div class="ia_admin_list">
+    <div class="ia_admin_list_header">
+        <p class="ia_title">Siparişler</p>
+    </div>
+    <div>
+        <table class="ia_admin_list_table">
+            <tr>
+                <th>Başlık</th>
+                <th>Müşteri</th>
+                <th>Detaylar</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.OrderId</td>
+                    <td>@item.FirstName @item.LastName</td>
+                    <td><a href="/Order/OrderDetailForAdmin/@item.OrderId" class="ia_button_success">İncele</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

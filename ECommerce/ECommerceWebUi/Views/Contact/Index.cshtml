@@ -1,0 +1,32 @@
+﻿@model List<ContactDto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="ia_admin_list">
+    <div class="ia_admin_list_header">
+        <p class="ia_title">İletişim</p>
+        <a class="ia_new_button" href="Contact/CreateContact/">Yeni Ekle</a>
+    </div>
+    <div>
+        <table class="ia_admin_list_table">
+            <tr>
+                <th>İl İlçe</th>
+                <th>Açıklama</th>
+                <th>E posta</th>
+                <th>Düzenleme</th>
+                <th>Silme</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.Mail</td>
+                    <td><a href="/Contact/DeleteContact/@item.ContactId" class="ia_button_remove">Sil</a></td>
+                    <td><a href="/Contact/UpdateContact/@item.ContactId" class="ia_button_success">Güncelle</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

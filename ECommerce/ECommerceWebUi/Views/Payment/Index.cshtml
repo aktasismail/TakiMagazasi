@@ -1,0 +1,26 @@
+﻿@model PaymentModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Ödeme";
+}
+<div class="box_center">
+    <div class="order_confirm">
+        <form method="post" asp-action="CreatePayment" asp-controller="Payment">
+            <div class="credit_cart">
+                <p>
+                    Ödeme bilgileriniz
+                </p>
+                <div class="credit_cart_width">
+                    <input class="ia_input_cart" asp-for="@Model.CardNumber" placeholder="Kart numarası" />
+                    <input class="ia_input_cart" asp-for="@Model.CardHolderName" placeholder="Kart üzerindeki isim" />
+                    <div class="ia_creditcart">
+                        <input class="ia_input_creditcart" asp-for=@Model.ExpireMonth placeholder="Ay" />
+                        <input class="ia_input_creditcart" asp-for="@Model.ExpireYear" placeholder=" Yıl" />
+                        <input class="ia_input_creditcart" asp-for="@Model.Cvc" type="password" placeholder="Cvv" />
+                    </div>
+                </div>
+                <button type="submit" class="ia_button_blue">Satın al</button>
+            </div>
+        </form>
+    </div>
+</div>

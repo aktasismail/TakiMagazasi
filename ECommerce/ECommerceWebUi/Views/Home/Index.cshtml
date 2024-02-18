@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ProductDto>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Anasayfa";
+}
+<div class="ia_home_body">
+    <div class="ia_presentation">
+        En iyi ürünleri, en uygun fiyatlarla
+        ve en hızlı şekilde sizlere ulaştırmak
+        için buradayız.
+    </div>
+    <img src="image/Resim.png"/>
+</div>
+<p class="ia_title">Ürünlerimiz</p>
+<div class="ia_home_product">
+    @foreach (var item in Model)
+    {
+        <div class="ia_product">
+            <img class="ia_product_image" src="~/image/@item.ImageUrl" alt="" />
+            <span class="ia_title">@item.Price₺</span>
+            <p>@item.ProductName</p>
+            <div class="ia_home_button">
+                <a asp-controller="Home" asp-action="ProductDetails" asp-route-id="@item.Id">İncele</a>
+                <a href="#" onclick="addfavourite(@item.Id)"><i class="bi bi-heart"></i></a>
+                <a class="ia_button_success" href="#" onclick="addproductid(@item.Id)"><i class="bi bi-cart"></i>Sepete Ekle</a>
+                
+            </div>
+        </div>
+    }
+</div>
+@section Scripts {
+    <script>
+        function addproductid(value) {
+            var id = value;
+            $.ajax({
+                type: 'POST',
+                data: { item: id },
+                url: "/Cart/AddToCart/" + id,
+                contentType: 'json',
+                success: function () {
+                    swal("Sepete Eklendi.");
+                }
+            });
+        };
+        function addfavourite(value) {
+            var id = value;
+            $.ajax({
+                type: 'POST',
+                data: { item: id },
+                url: "/Favourite/CreateFavourite/" + id,
+                contentType: 'json',
+                success: function () {
+                    swal("Favorilere Eklendi.");
+                }
+            });
+        };
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+}

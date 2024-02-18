@@ -1,0 +1,35 @@
+﻿@model OrderModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Teslimat";
+}
+<form method="post" asp-action="CreateCheckout" asp-controller="Order">
+    <div class="address">
+        <div class="address_detail">
+            <input class="ia_input_address" asp-for="FirstName" placeholder="Ad" />
+            <input class="ia_input_address" asp-for="LastName" placeholder="Soyad" />
+            <input class="ia_input_address" asp-for="City" placeholder="İl" />
+            <input class="ia_input_address" asp-for="Region" placeholder="İlçe" />
+            <input class="ia_input_address" asp-for="PostalCode" placeholder="Posta kodu" />
+            <input class="ia_input_address" asp-for="Street" placeholder="Mahalle" />
+            <input class="ia_input_address" asp-for="Apartment" placeholder="Apartman" />
+            <button type="submit" class="ia_button_blue">Ödemeye geç</button>
+        </div>
+
+        <div class="address_product">
+            <div class="adress_row">
+                <p>Satın alacağınız ürünler</p>
+            </div>
+            @foreach (var item in Model.Items)
+            {
+                <div class="adress_row">
+                    <img class="ia_address_image" src="~/image/@item.ImageUrl" alt="resim yok" />
+                    <div>
+                        <p>@item.ProductName</p>
+                        <p><b>@item.Price.ToString("C")₺</b></p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</form>

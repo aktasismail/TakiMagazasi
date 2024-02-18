@@ -1,0 +1,107 @@
+﻿@model OrderDetailVM
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Sipariş Detay";
+    decimal totalprice = 0;
+}
+<div class="order_detail_title">Sipariş Numarası #@Model.Order.OrderId</div>
+<div class="order_detail_container">
+
+    <div class="order_detail">
+        <div class="order_box">
+            <p class="profile_title"><strong>Sipariş Bilgileri</strong></p>
+            <hr />
+            <div class="order_item">
+                <p><strong>Ürün Adı</strong></p>
+                <p><strong>Fiyat</strong></p>
+            </div>
+            <hr />
+            @foreach (var item in Model.ListOrder)
+            {
+                totalprice = item.Products.Sum(x => x.Price);
+                
+                @foreach (var product in item.Products)
+                {
+                    <div class="order_item">
+                        <p>
+                            @product.ProductName
+                        </p>
+                        <p>
+                            @product.Price TL
+                        </p>
+                    </div>
+                    <hr />
+                }
+            }
+        </div>
+        <div class="order_box">
+            <p class="profile_title"><strong>Müşteri Bilgileri</strong></p>
+            <hr />
+            <div class="order_item">
+                <p>Müşteri adı</p>
+                <p>@Model.AppUser.FirstName @Model.AppUser.LastName</p>
+            </div>
+            <hr />
+            <div class="order_item">
+                <p>Kullanıcı adı</p>
+                <p>@Model.AppUser.UserName</p>
+            </div>
+            <hr />
+            <div class="order_item">
+                <p>E posta</p>
+                <p>@Model.AppUser.Email</p>
+            </div>
+        </div>
+    </div>
+    <div class="delivery_detail">
+        <div class="order_status">
+            <p class="profile_title"><strong>Durum</strong></p>
+            <p>@Model.Order.Status</p>
+            @if (@Model.Order.Tracking is not null)
+            {
+                <p>Kargo takip numarası : @Model.Order.Tracking</p>
+            }
+            
+        </div>
+        <div class="order_date">
+            <p class="profile_title"><strong>Oluşturulma Tarihi</strong></p>
+            <hr />
+            <div class="order_item">
+                <p>Sipariş Tarihi</p>
+                <p>@Model.Order.OrderDate.ToString("dd MMMM yyyy")</p>
+            </div>
+            <div class="order_item">
+                <p>Sipariş Saati</p>
+                <p>@Model.Order.OrderDate.ToString("HH:mm:ss")</p>
+            </div>
+            <div class="order_item">
+                <p>Toplam</p>
+                <p>@totalprice ₺</p>
+            </div>
+        </div>
+        <div class="order_date">
+            <p class="profile_title"><strong>Teslimat Bilgileri</strong></p>
+            <hr />
+            <div class="order_item">
+                <p>Şehir</p>
+                <p>@Model.Order.City</p>
+            </div>
+            <div class="order_item">
+                <p>İlçe</p>
+                <p>@Model.Order.Region</p>
+            </div>
+            <div class="order_item">
+                <p>Mahalle</p>
+                <p>@Model.Order.Street</p>
+            </div>
+            <div class="order_item">
+                <p>Apartman</p>
+                <p>@Model.Order.Apartment</p>
+            </div>
+            <div class="order_item">
+                <p>Posta kodu</p>
+                <p>@Model.Order.Apartment</p>
+            </div>
+        </div>
+    </div>
+</div>

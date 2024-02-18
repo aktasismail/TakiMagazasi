@@ -1,0 +1,110 @@
+﻿@model OrderDetailVM
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Fatura";
+    decimal cartprice = 0;
+    decimal totalprice = 0;
+    decimal kdv = 0;
+}
+<link rel="stylesheet" href="~/css/main.css" />
+<div class="box_center ">
+    <button class="ia_button_success" id="btnpdf">indir</button>
+</div>
+
+<div class="box_center" id="pdfcontent">
+
+    <div class="billing_container">
+        <div class="billing_item">
+            <div>
+                <span class="ia_logo">AktasShop</span>
+                <p>@Model.Order.OrderDate.ToString("dd MMMM yyyy")</p>
+            </div>
+            <div>
+                <span class="ia_billing_logo">FATURA</span>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <p class="billing_title">
+                Faturayı kesen
+            </p>
+            <div class="ia_column">
+                <strong>İsmail Aktaş</strong>
+                <span>
+                    +0 123 456 7890
+                </span>
+                <span>Cumhuriyet mh. Lale sk. no:21</span>
+                <span>Taured - Merkez</span>
+            </div>
+        </div>
+        <div class="billing_table">
+            <div class="billing_item">
+                <p class="billing_title">ÜRÜN ADI</p>
+                <p class="billing_title">FİYAT</p>
+            </div>
+            <hr />
+            @foreach (var item in Model.ListOrder)
+            {
+                @foreach (var product in item.Products)
+                {
+                    cartprice = item.Products.Sum(x => x.Price);
+                    kdv = cartprice / 100 * 10;
+                    totalprice = cartprice + kdv;
+                    <div class="billing_item">
+                        <p>
+                            @product.ProductName
+                        </p>
+                        <p>
+                            @product.Price TL
+                        </p>
+                    </div>
+                }
+            }
+            <hr />
+            <div class="billing_total">
+                <span><strong>Ara toplam:</strong>@cartprice TL</span>
+                <span><strong>Vergi tutarı:</strong>@kdv TL</span>
+                <span><strong>Toplam:</strong>@totalprice TL</span>
+            </div>
+            <hr />
+            <div class="billing_table">
+                <div class="billing_item">
+                    <div>
+                        <span class="billing_title">ALICI BİLGİSİ</span>
+                        <div class="ia_column">
+                            <p>@Model.Order.FirstName @Model.Order.LastName</p>
+                            <span>@Model.Order.Street @Model.Order.Apartment</span>
+                            <span>@Model.Order.City - @Model.Order.Region</span>
+                        </div>
+
+                    </div>
+                    <div>
+                        <span class="billing_title">SATICI BİLGİLERİ</span>
+                        <div class="ia_column">
+                            <p>AktasShop</p>
+                            <span>
+                                +0 123 456 7890
+                            </span>
+                            <span>Cumhuriyet mh. Lale sk. no:21</span>
+                            <span>Taured - Merkez</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        $("#btnpdf").click(function () {
+            var element = document.getElementById('pdfcontent');
+            html2pdf().from(element).set({
+                pagebreak: { mode: 'avoid-all' },
+                jsPDF: { format: 'a4' }
+            }).save();
+        });
+    </script>
+}

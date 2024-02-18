@@ -1,0 +1,16 @@
+﻿@model SocialMediaDto
+@{
+    ViewData["Title"] = "Güncelle";
+}
+<div class="ia_admin_edit">
+    <form method="post">
+        <div class="ia_admin_form">
+            <p class="ia_title">Sosyal medya linki güncelle</p>
+            <input type="hidden" asp-for="SocialMediaId" />
+            <input class="ia_admin_input" asp-for="Title" placeholder="Başlık" />
+            <textarea class="ia_admin_input" asp-for="Url" placeholder="Link"></textarea>
+            <input class="ia_admin_input" asp-for="Icon" placeholder="Resim Adresi" />
+            <button type="submit" class="ia_button_blue">Güncelle</button>
+        </div>
+    </form>
+</div>

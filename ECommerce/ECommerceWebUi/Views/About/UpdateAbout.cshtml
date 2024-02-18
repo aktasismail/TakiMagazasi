@@ -1,0 +1,17 @@
+﻿@model About
+
+@{
+    ViewData["Title"] = "UpdateAbout";
+} 
+<div class="ia_admin_edit">
+    <form method="post">
+        <input type="hidden" asp-for="AboutId" />
+        <div class="ia_admin_form">
+            <p class="ia_title">Hakkımızda yazısı Güncelle</p>
+            <input class="ia_admin_input" asp-for="Title" placeholder="Başlık" />
+            <textarea class="ia_admin_input" asp-for="Description" placeholder="Açıklama"></textarea>
+            <input class="ia_admin_input" asp-for="ImageUrl" placeholder="Alt menü bilgisi" />
+            <button type="submit" class="ia_button_blue">Güncelle</button>
+        </div>
+    </form>
+</div>

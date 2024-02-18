@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Comment>
+@{
+    ViewData["Title"] = "Profil";
+    Layout = "_Layout";
+}
+<div class="ia_profile">
+    <div class="ia_profile_detail">
+        @await Component.InvokeAsync("AccountVC")
+        <div class="my_order">
+            <div class="list_order_header">
+                Yorumlarım
+                <hr />
+            </div>
+            @foreach (var item in Model)
+            {
+
+                <div class="list_order">
+                    <a>@item.Text</a>
+                    <a asp-controller="User" asp-action="DeleteComment" asp-route-id="@item.CommentId" class="ia_button_remove">Sil</a>
+                </div>
+
+
+            }
+
+        </div>
+    </div>
+    <div class="profile_sidebar">
+        <a asp-controller="User" asp-action="Index"><i class="bi bi-watch"></i>Siparişlerim</a>
+        <a asp-controller="Favourite" asp-action="Index"><i class="bi bi-heart-fill"></i>Favorilerim</a>
+        <a asp-controller="User" asp-action="MyComment"><i class="bi bi-pencil-fill"></i>Yorumlarım</a>
+    </div>
+</div>

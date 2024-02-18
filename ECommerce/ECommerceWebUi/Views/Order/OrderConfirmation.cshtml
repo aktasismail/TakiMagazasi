@@ -1,0 +1,22 @@
+﻿@model OrderConfirmationModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Onaylandı";
+}
+<div class="box_center">
+    <div class="order_confirm">
+        <div class="ia_order_title">
+            <p class="title_success"> Siparişiniz alındı.</p>
+        </div>
+        <p><b>Sipariş numarası</b>:@Model.OrderNumber</p>
+        <p><b>Tarih</b>:@Model.OrderDate.ToString("dd MMMM yyyy")</p>
+        <p><b>Toplam</b>:@Model.TotalAmount₺</p>
+        <div class="ia_order_title">
+            Bizi tercih ettiğiniz için teşekkürler.
+        </div>
+        <div class="ia_order_title">
+            Sorularınız için bizimler iletişime geçebilirsiniz.
+        </div>
+    </div>
+</div>
+

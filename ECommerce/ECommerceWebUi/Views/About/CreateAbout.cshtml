@@ -1,0 +1,15 @@
+﻿@model AboutCreateDto
+@{
+    ViewData["Title"] = "Yeni";
+}
+<div class="ia_admin_edit">
+<form method="post">
+        <div class="ia_admin_form">
+            <p class="ia_title">Yeni Hakkımızda yazısı ekle</p>
+            <input class="ia_admin_input" asp-for="Title" placeholder="Başlık" />
+            <textarea class="ia_admin_input" asp-for="Description" placeholder="Açıklama"></textarea>
+            <input class="ia_admin_input" asp-for="ImageUrl" placeholder="Alt menü bilgisi" />
+            <button type="submit" class="ia_button_blue">Ekle</button>
+        </div>
+    </form>
+</div>

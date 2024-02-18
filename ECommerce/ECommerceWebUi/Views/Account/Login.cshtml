@@ -1,0 +1,19 @@
+﻿@model LoginDto
+@{
+    ViewData["Title"] = "Giriş Yapma";
+    Layout = "_Layout";
+}
+<form asp-controller="Account" asp-action="Login" method="post">
+    <div class="ia_form">
+        <p class="ia_title">Oturum aç</p>
+
+        <input class="ia_input" asp-for="UserName" placeholder="Kullanıcı adı" />
+        <input class="ia_input" asp-for="Password" placeholder="Şifre" type="password" />
+        <div class="ia_row">
+            <input asp-for="RememberMe" type="checkbox">
+            <span>Beni hatırla</span>
+        </div>
+        <button type="submit" class="ia_button_success">Giriş Yap</button>
+
+    </div>
+</form>

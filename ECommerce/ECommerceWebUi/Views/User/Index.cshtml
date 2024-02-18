@@ -1,0 +1,34 @@
+﻿@model List<Order>
+@{
+    ViewData["Title"] = "Profil";
+    Layout = "_Layout";
+}
+<div class="ia_profile">
+    <div class="ia_profile_detail">
+        @await Component.InvokeAsync("AccountVC")
+        <div class="my_order">
+            <div class="list_order_header">
+                Siparişlerim
+                <hr />
+            </div>
+            @foreach (var item in Model)
+            {
+                @foreach (var product in item.Products)
+                {
+                    <div class="list_order">
+                        <a><img class="ia_address_image" src="~/image/@product.ImageUrl" /></a>
+                        <a>@product.ProductName</a>
+                        <a asp-controller="Order" asp-action="OrderDetail" asp-route-id="@item.OrderId" class="ia_button_success">Detaylar</a>
+                    </div>
+                }
+
+            }
+
+        </div>
+    </div>
+    <div class="profile_sidebar">
+        <a asp-controller="User" asp-action="Index"><i class="bi bi-watch"></i>Siparişlerim</a>
+        <a asp-controller="Favourite" asp-action="Index"><i class="bi bi-heart-fill"></i>Favorilerim</a>
+        <a asp-controller="User" asp-action="MyComment"><i class="bi bi-pencil-fill"></i>Yorumlarım</a>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@model CategoryDto
+
+@{
+    ViewData["Title"] = "Güncelle";
+}
+
+<div class="ia_admin_edit">
+    <form method="post">
+        <input type="hidden" asp-for="CategoryId" />
+        <div class="ia_admin_form">
+            <p class="ia_title">Kkategori Güncelle</p>
+            <input class="ia_admin_input" asp-for="CategoryName" placeholder="Başlık" />
+            <button type="submit" class="ia_button_blue">Güncelle</button>
+        </div>
+    </form>
+</div>

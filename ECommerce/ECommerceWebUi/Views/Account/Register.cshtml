@@ -1,0 +1,17 @@
+﻿@model RegisterDto
+@{
+	Layout = "_Layout";
+	ViewData["Title"] = "Kayıt olma";
+}
+<form asp-controller="Account" asp-action="Register" method="post">
+<div class="ia_form">
+	<p class="ia_title">Kayıt olma</p>
+	<input class="ia_input" asp-for="Name" placeholder="Ad" />
+	<input class="ia_input" asp-for="Surname" placeholder="Soyad" />
+	<input class="ia_input" asp-for="UserName" placeholder="Kullanıcı adı" />
+	<input class="ia_input" asp-for="Email" placeholder="E Posta" />
+	<input class="ia_input" asp-for="Password" placeholder="Şifre" type="password" />
+	<input class="ia_input" asp-for="ConfirmPassword" placeholder="Şifre tekrar" type="password" />
+	<button type="submit" class="ia_button_success">Kayıt ol</button>
+    </div>
+</form>
